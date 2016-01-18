@@ -32,23 +32,28 @@
 	1+ \ increase y for next time we're called
 ;
 
-: logo ( x y -- ) \ B/W Orb mascot (15 rows x 32 columns)
+: logo ( x y -- ) \ B/W trinity shield (20 rows x 20 columns)
 
-	s"  ```                        `"  logo+
-	s" s` `.....---.......--.```   -/" logo+
-	s" +o   .--`         /y:`      +." logo+
-	s"  yo`:.            :o      `+-"  logo+
-	s"   y/               -/`   -o/"   logo+
-	s"  .-                  ::/sy+:."  logo+
-	s"  /                     `--  /"  logo+
-	s" `:                          :`" logo+
-	s" `:                          :`" logo+
-	s"  /                          /"  logo+
-	s"  .-                        -."  logo+
-	s"   --                      -."   logo+
-	s"    `:`                  `:`"    logo+
-	s"      .--             `--."      logo+
-	s"         .---.....----."         logo+
+	s"         ...          logo+
+	s"    .:::|#:#|::::.    logo+
+	s" .:::::|##|##|::::::. logo+
+	s" .::::|##|:|##|:::::. logo+
+	s"  ::::|#|:::|#|:::::  logo+
+	s"  ::::|#|:::|#|:::::  logo+
+	s"  ::::|##|:|##|:::::  logo+
+	s"  ::::.|#|:|#|.:::::  logo+
+	s"  ::|####|::|####|::  logo+
+	s"  :|###|:|##|:|###|:  logo+
+	s"  |###|::|##|::|###|  logo+
+	s"  |#|::|##||##|::|#|  logo+
+	s"  |#|:|##|::|##|:|#|  logo+
+	s"  |#|##|::::::|##|#|  logo+
+	s"   |#|::::::::::|#|   logo+
+	s"    ::::::::::::::    logo+
+	s"      ::::::::::      logo+
+	s"       ::::::::       logo+
+	s"        ::::::        logo+
+	s"          ::          logo+
 
 	2drop
 ;
