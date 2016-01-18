@@ -36,4 +36,4 @@ nodevice		snd_ich		                # Remove Intel, NVidia and other ICH AC'97 Au
 nodevice		snd_via8233		            # Remove VIA VT8233x Audio
 
 # Netmap
-device      netmap		                    # Add Netmap for supper fast I/O
+device      netmap		# Netmap for supper fast I/O
