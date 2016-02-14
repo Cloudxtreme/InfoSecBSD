@@ -1,0 +1,39 @@
+include     GENERIC
+ident       INFOSEC
+
+nodevice	wlan		                    # Remove 802.11 support
+nooptions 	IEEE80211_DEBUG		            # Remove debug msgs
+nooptions 	IEEE80211_AMPDU_AGE	            # Remove age frames in AMPDU reorder q's
+nooptions 	IEEE80211_SUPPORT_MESH	        # Remove 802.11s draft support
+nodevice		wlan_wep		            # Remove 802.11 WEP support
+nodevice		wlan_ccmp		            # Remove 802.11 CCMP support
+nodevice		wlan_tkip		            # Remove 802.11 TKIP support
+nodevice		wlan_amrr		            # Remove AMRR transmit rate control algorithm
+nodevice		an			                # Remove Aironet 4500/4800 802.11 wireless NICs.
+nodevice		ath			                # Remove Atheros NICs
+nodevice		ath_pci			            # Remove Atheros pci/cardbus glue
+nodevice		ath_hal			            # Remove pci/cardbus chip support
+nooptions 	AH_SUPPORT_AR5416	            # Remove enable AR5416 tx/rx descriptors
+nooptions 	AH_AR5416_INTERRUPT_MITIGATION  # Remove AR5416 interrupt mitigation
+nooptions 	ATH_ENABLE_11N		            # Remove Enable 802.11n support for AR5416 and later
+nodevice		ath_rate_sample		        # Remove SampleRate tx rate control for ath
+nodevice		ipw			                # Remove Intel 2100 wireless NICs.
+nodevice		iwi			                # Remove Intel 2200BG/2225BG/2915ABG wireless NICs.
+nodevice		iwn			                # Remove Intel 4965/1000/5000/6000 wireless NICs.
+nodevice		malo			            # Remove Marvell Libertas wireless NICs.
+nodevice		mwl			                # Remove Marvell 88W8363 802.11n wireless NICs.
+nodevice		ral			                # Remove Ralink Technology RT2500 wireless NICs.
+nodevice		wi			                # Remove WaveLAN/Intersil/Symbol 802.11 wireless NICs.
+nodevice		wpi			                # Remove Intel 3945ABG wireless NICs.
+
+# Sound support
+nodevice		snd_cmi			            # Remove CMedia CMI8338/CMI8738
+nodevice		snd_csa			            # Remove Crystal Semiconductor CS461x/428x
+nodevice		snd_emu10kx		            # Remove Creative SoundBlaster Live! and Audigy
+nodevice		snd_es137x		            # Remove Ensoniq AudioPCI ES137x
+nodevice		snd_hda	                    # Remove Intel High Definition Audio
+nodevice		snd_ich		                # Remove Intel, NVidia and other ICH AC'97 Audio
+nodevice		snd_via8233		            # Remove VIA VT8233x Audio
+
+# Netmap
+device      netmap		# Netmap for supper fast I/O
