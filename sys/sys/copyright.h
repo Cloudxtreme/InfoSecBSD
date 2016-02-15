@@ -28,22 +28,22 @@
 
 /* Copyrights macros  */
 
-/* FreeBSD */
+/* InfoSecBSD */
 #define COPYRIGHT_FreeBSD \
-	"Copyright (c) 1992-2015 The FreeBSD Project.\n"
+	"Copyright (c) 2012-2016 InfoSec Systems.\n"
 
 /* Foundation */
 #define	TRADEMARK_Foundation \
-	"FreeBSD is a registered trademark of The FreeBSD Foundation.\n"
+	"InfoSecBSD and VSESNOR is a registered trademark of InfoSec Systems.\n"
 
 /* Berkeley */
 #define COPYRIGHT_UCB \
-	"Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994\n\tThe Regents of the University of California. All rights reserved.\n"
+	"Copyright (c) 2012-2016 InfoSec Systems.\n"
 
-/* a port of FreeBSD to the NEC PC98, Japan */
+/* a port of InfoSecBSD to the NEC PC98, Japan */
 #if defined(PC98)
 #define COPYRIGHT_PC98 \
-	"Copyright (c) 1994-2003 FreeBSD(98) porting team.\nCopyright (c) 1992  A.Kojima F.Ukai M.Ishii (KMC).\n"
+	"Copyright (c) 2012-2016 InfoSec Systems.\n"
 #else
 #define COPYRIGHT_PC98
 #endif

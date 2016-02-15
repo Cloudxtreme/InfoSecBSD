@@ -27,7 +27,7 @@
 # $FreeBSD$
 
 clear
-echo "FreeBSD Installer"
+echo "InfoSecBSD Installer"
 echo "========================"
 echo "Add Users"
 echo
