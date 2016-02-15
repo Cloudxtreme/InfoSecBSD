@@ -36,9 +36,9 @@ _atrun=		atrun
 SUBDIR+=	bootpd
 .endif
 
-.if ${MK_FINGER} != "no"
-SUBDIR+=	fingerd
-.endif
+#.if ${MK_FINGER} != "no"
+#SUBDIR+=	fingerd
+#.endif
 
 .if ${MK_FTP} != "no"
 SUBDIR+=	ftpd

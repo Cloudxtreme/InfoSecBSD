@@ -209,9 +209,9 @@ SUBDIR+=	at
 SUBDIR+=	atm
 .endif
 
-.if ${MK_BLUETOOTH} != "no"
-SUBDIR+=	bluetooth
-.endif
+#.if ${MK_BLUETOOTH} != "no"
+#SUBDIR+=	bluetooth
+#.endif
 
 .if ${MK_BSD_CPIO} != "no"
 SUBDIR+=	cpio
@@ -233,9 +233,9 @@ SUBDIR+=	ee
 SUBDIR+=	file
 .endif
 
-.if ${MK_FINGER} != "no"
-SUBDIR+=	finger
-.endif
+#.if ${MK_FINGER} != "no"
+#SUBDIR+=	finger
+#.endif
 
 .if ${MK_FTP} != "no"
 SUBDIR+=	ftp
@@ -307,9 +307,9 @@ _makewhatis=	makewhatis
 _man=		man
 .endif
 
-.if ${MK_NETCAT} != "no"
-SUBDIR+=	nc
-.endif
+#.if ${MK_NETCAT} != "no"
+#SUBDIR+=	nc
+#.endif
 
 .if ${MK_NIS} != "no"
 SUBDIR+=	ypcat

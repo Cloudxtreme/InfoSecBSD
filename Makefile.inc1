@@ -65,9 +65,9 @@ SUBDIR=	${SUBDIR_OVERRIDE}
 .else
 SUBDIR=	share/info lib libexec
 SUBDIR+=bin
-.if ${MK_GAMES} != "no"
-SUBDIR+=games
-.endif
+#.if ${MK_GAMES} != "no"
+#SUBDIR+=games
+#.endif
 .if ${MK_CDDL} != "no"
 SUBDIR+=cddl
 .endif
@@ -592,16 +592,16 @@ everything:
 	@echo "--------------------------------------------------------------"
 	${_+_}cd ${.CURDIR}; ${WMAKE} par-all
 .if defined(LIB32TMP)
-build32:
-	@echo
-	@echo "--------------------------------------------------------------"
-	@echo ">>> stage 5.1: building 32 bit shim libraries"
-	@echo "--------------------------------------------------------------"
-	mkdir -p ${LIB32TMP}/usr/include
-	mtree -deU -f ${.CURDIR}/etc/mtree/BSD.usr.dist \
-	    -p ${LIB32TMP}/usr >/dev/null
-	mtree -deU -f ${.CURDIR}/etc/mtree/BSD.include.dist \
-	    -p ${LIB32TMP}/usr/include >/dev/null
+#build32:
+#	@echo
+#	@echo "--------------------------------------------------------------"
+#	@echo ">>> stage 5.1: building 32 bit shim libraries"
+#	@echo "--------------------------------------------------------------"
+#	mkdir -p ${LIB32TMP}/usr/include
+#	mtree -deU -f ${.CURDIR}/etc/mtree/BSD.usr.dist \
+#	    -p ${LIB32TMP}/usr >/dev/null
+#	mtree -deU -f ${.CURDIR}/etc/mtree/BSD.include.dist \
+#	    -p ${LIB32TMP}/usr/include >/dev/null
 .if ${MK_DEBUG_FILES} != "no"
 	mtree -deU -f ${.CURDIR}/etc/mtree/BSD.debug.dist \
 	    -p ${LIB32TMP}/usr/lib >/dev/null
@@ -642,22 +642,22 @@ build32:
 	    DIRPRFX=usr.bin/ldd ${_t}
 .endfor
 
-distribute32 install32:
-	cd ${.CURDIR}/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
-.if ${MK_CDDL} != "no"
-	cd ${.CURDIR}/cddl/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
-.endif
-	cd ${.CURDIR}/gnu/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
-.if ${MK_CRYPT} != "no"
-	cd ${.CURDIR}/secure/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
-.endif
-.if ${MK_KERBEROS} != "no"
-	cd ${.CURDIR}/kerberos5/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
-.endif
-	cd ${.CURDIR}/libexec/rtld-elf; \
-	    PROG=ld-elf32.so.1 ${LIB32IMAKE} ${.TARGET:S/32$//}
-	cd ${.CURDIR}/usr.bin/ldd; PROG=ldd32 ${LIB32IMAKE} ${.TARGET:S/32$//}
-.endif
+#distribute32 install32:
+#	cd ${.CURDIR}/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.if ${MK_CDDL} != "no"
+#	cd ${.CURDIR}/cddl/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.endif
+#	cd ${.CURDIR}/gnu/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.if ${MK_CRYPT} != "no"
+#	cd ${.CURDIR}/secure/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.endif
+#.if ${MK_KERBEROS} != "no"
+#	cd ${.CURDIR}/kerberos5/lib; ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.endif
+#	cd ${.CURDIR}/libexec/rtld-elf; \
+#	    PROG=ld-elf32.so.1 ${LIB32IMAKE} ${.TARGET:S/32$//}
+#	cd ${.CURDIR}/usr.bin/ldd; PROG=ldd32 ${LIB32IMAKE} ${.TARGET:S/32$//}
+#.endif
 
 WMAKE_TGTS=
 .if !defined(SUBDIR_OVERRIDE)
@@ -668,9 +668,9 @@ WMAKE_TGTS+=	_cleanobj _obj _build-tools
 WMAKE_TGTS+=	_cross-tools
 .endif
 WMAKE_TGTS+=	_includes _libraries _depend everything
-.if defined(LIB32TMP) && ${MK_LIB32} != "no"
-WMAKE_TGTS+=	build32
-.endif
+#.if defined(LIB32TMP) && ${MK_LIB32} != "no"
+#WMAKE_TGTS+=	build32
+#.endif
 
 buildworld: buildworld_prologue ${WMAKE_TGTS} buildworld_epilogue
 .ORDER: buildworld_prologue ${WMAKE_TGTS} buildworld_epilogue
@@ -805,12 +805,12 @@ ITOOLS+=makewhatis
 
 # Non-base distributions produced by the base system
 EXTRA_DISTRIBUTIONS=	doc
-.if ${MK_GAMES} != "no"
-EXTRA_DISTRIBUTIONS+=	games
-.endif
-.if defined(LIB32TMP) && ${MK_LIB32} != "no"
-EXTRA_DISTRIBUTIONS+=	lib32
-.endif
+#.if ${MK_GAMES} != "no"
+#EXTRA_DISTRIBUTIONS+=	games
+#.endif
+#.if defined(LIB32TMP) && ${MK_LIB32} != "no"
+#EXTRA_DISTRIBUTIONS+=	lib32
+#.endif
 .if ${MK_TESTS} != "no"
 EXTRA_DISTRIBUTIONS+=	tests
 .endif
@@ -954,19 +954,19 @@ reinstall: .MAKE
 	@echo ">>> Installing everything"
 	@echo "--------------------------------------------------------------"
 	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 install
-.if defined(LIB32TMP) && ${MK_LIB32} != "no"
-	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 install32
-.endif
+#.if defined(LIB32TMP) && ${MK_LIB32} != "no"
+#	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 install32
+#.endif
 
 redistribute: .MAKE
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Distributing everything"
 	@echo "--------------------------------------------------------------"
 	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 distribute
-.if defined(LIB32TMP) && ${MK_LIB32} != "no"
-	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 distribute32 \
-	    DISTRIBUTION=lib32
-.endif
+#.if defined(LIB32TMP) && ${MK_LIB32} != "no"
+#	${_+_}cd ${.CURDIR}; ${MAKE} -f Makefile.inc1 distribute32 \
+#	    DISTRIBUTION=lib32
+#.endif
 
 distrib-dirs distribution: .MAKE
 	cd ${.CURDIR}/etc; ${CROSSENV} PATH=${TMPPATH} ${MAKE} \
@@ -1223,9 +1223,9 @@ legacy:
 #
 _bt=		_bootstrap-tools	
 
-.if ${MK_GAMES} != "no"
-_strfile=	games/fortune/strfile
-.endif
+#.if ${MK_GAMES} != "no"
+#_strfile=	games/fortune/strfile
+#.endif
 
 .if ${MK_CXX} != "no"
 _gperf=		gnu/usr.bin/gperf

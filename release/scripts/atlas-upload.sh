@@ -28,7 +28,7 @@
 
 ATLAS_API_URL=''
 ATLAS_UPLOAD_URL='https://binstore.hashicorp.com'
-DESCRIPTION="FreeBSD Snapshot Build"
+DESCRIPTION="InfoSecBSD Snapshot Build"
 
 usage() {
 	echo "${0} usage:"
