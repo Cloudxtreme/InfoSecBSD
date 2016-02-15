@@ -35,7 +35,7 @@ NAME=$1; shift
 BASEBITSDIR=$1
 
 # Create an ISO image
-publisher="The FreeBSD Project.  http://www.FreeBSD.org/"
+publisher="InfoSec Systems  http://www.insecure-it.com/"
 echo "/dev/iso9660/$LABEL / cd9660 ro 0 0" > "${BASEBITSDIR}/etc/fstab"
 makefs -t cd9660 -o rockridge -o label="$LABEL" -o publisher="$publisher" ${NAME}.tmp $*
 rm "${BASEBITSDIR}/etc/fstab"

@@ -30,8 +30,8 @@
 #	@(#)newvers.sh	8.1 (Berkeley) 4/20/94
 # $FreeBSD$
 
-TYPE="FreeBSD"
-REVISION="10.2"
+TYPE="InfoSecBSD"
+REVISION="1.0"
 BRANCH="RELEASE"
 if [ "X${BRANCH_OVERRIDE}" != "X" ]; then
 	BRANCH=${BRANCH_OVERRIDE}
@@ -70,7 +70,7 @@ done
 # no copyright found, use a dummy
 if [ X"$COPYRIGHT" = X ]; then
 	COPYRIGHT="/*-
- * Copyright (c) 1992-$year The FreeBSD Project.
+ * Copyright (c) 2012-$year InfoSec Systems
  * All rights reserved.
  *
  */"
